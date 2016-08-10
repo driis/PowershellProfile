@@ -15,16 +15,5 @@ function prompt() {
   "$loc>"
 }
 
-
-function gs()
-{
-	git status
-}
-
-function ga()
-{
-	git add .
-	gs
-}
 # Load posh-git example profile
 . 'D:\WindowsPowerShell\Modules\posh-git\profile.example.ps1'
