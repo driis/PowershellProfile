@@ -15,5 +15,5 @@ function prompt() {
   "$loc>"
 }
 
-# Load posh-git example profile
-. 'D:\WindowsPowerShell\Modules\posh-git\profile.example.ps1'
+# Load posh-git profile
+. 'D:\WindowsPowerShell\Modules\posh-git\profile.driis.ps1'
