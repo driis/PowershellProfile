@@ -6,9 +6,11 @@ if (Test-Path "D:\scripts") {
   add-pathvariable "D:\scripts"
 }
 
-$profileDir = [System.IO.Path]::GetDirectoryName($profile);
-. "$profileDir\profile-functions.ps1"
+. "$ProfileDir\profile-functions.ps1"
 $profile = [System.IO.Path]::Combine($profileDir,"Profile.ps1");
+
+$WindowTitle = "$Env:UserName on $(hostname)"
+$Host.UI.RawUI.WindowTitle = $WindowTitle
 
 # Load posh-git profile
 . (Join-Path $ProfileDir config\posh-git-profile.driis.ps1)
