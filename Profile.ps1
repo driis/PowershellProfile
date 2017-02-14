@@ -9,7 +9,6 @@ if (Test-Path "D:\scripts") {
 $profileDir = [System.IO.Path]::GetDirectoryName($profile);
 . "$profileDir\profile-functions.ps1"
 $profile = [System.IO.Path]::Combine($profileDir,"Profile.ps1");
-cd D:\ | out-null
 
 # Load posh-git profile
 . (Join-Path $ProfileDir config\posh-git-profile.driis.ps1)
