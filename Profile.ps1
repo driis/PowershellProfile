@@ -14,3 +14,4 @@ $Host.UI.RawUI.WindowTitle = $WindowTitle
 
 # Load posh-git profile
 . (Join-Path $ProfileDir config\posh-git-profile.driis.ps1)
+. (Join-Path $ProfileDir paket.ps1)
