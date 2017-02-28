@@ -26,3 +26,17 @@ function ga()
 	git add .
 	gs
 }
+
+function clean-branches
+{
+	git branch --merged | where { $_ -match "feature" } | foreach {
+		git branch -d $_.Trim()
+	}
+}
+
+function get-main
+{
+	git checkout main
+	git pull --ff-only
+	clean-branches
+}
