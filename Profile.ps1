@@ -4,7 +4,7 @@ Import-Module Pscx -arg (Join-Path $ProfileDir "config/Pscx.UserPreferences.ps1"
 
 #Paths
 Add-PathVariable "C:\Program Files (x86)\MSBuild\14.0\Bin\amd64"
-
+Add-PathVariable "C:\Program Files\nodejs"
 Set-Alias n atom
 if (Test-Path "D:\scripts") {
   add-pathvariable "D:\scripts"
