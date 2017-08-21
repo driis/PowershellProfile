@@ -34,10 +34,13 @@ function ga()
 	gs
 }
 
-function clean-branches
+function clean-branches($mainBranch)
 {
-	git branch --merged | foreach {
-		git branch -d $_.Trim()
+	git branch --merged $mainBranch | foreach {
+		$branch = $_.Trim()
+    if (-not $branch.StartsWith("*")) {
+      git branch -d $branch
+    }
 	}
 }
 
@@ -45,5 +48,12 @@ function get-main
 {
 	git checkout main
 	git pull --ff-only
-	clean-branches
+	clean-branches "main"
+}
+
+function get-master
+{
+  git checkout master
+  git pull --ff-only
+  clean-branches "master"
 }
