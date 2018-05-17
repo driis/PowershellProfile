@@ -2,4 +2,3 @@
 Import-Module posh-git
 $GitPromptSettings.DefaultPromptAbbreviateHomeDirectory = $true
 $GitPromptSettings.EnableWindowTitle = "$WindowTitle ~ "
-Start-SshAgent -Quiet
