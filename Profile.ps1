@@ -29,4 +29,3 @@ $Host.UI.RawUI.WindowTitle = $WindowTitle
 
 # Setup Git to use OpenSSH bundled with Windows so we can use ssh-agent as a service
 (get-command ssh)[0].Source | Set-Item Env:GIT_SSH
-ssh-add
