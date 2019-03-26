@@ -17,6 +17,9 @@ if (Test-Path "D:\scripts") {
   add-pathvariable "D:\scripts"
 }
 
+# Make TLS1.2 default for this instance of PSH
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
 . "$ProfileDir\profile-functions.ps1"
 $profile = [System.IO.Path]::Combine($profileDir,"Profile.ps1");
 
