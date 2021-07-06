@@ -9,9 +9,6 @@ Set-PSReadlineKeyHandler -Key Tab -Function Complete
 Set-Alias pbpaste get-clipboard
 Set-Alias pbcopy set-clipboard
 #Paths
-Add-PathVariable "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\15.0\Bin"
-Add-PathVariable "C:\Program Files\nodejs"
-Add-PathVariable "C:\Program Files (x86)\Microsoft SDKs\F#\4.1\Framework\v4.0"
 Set-Alias n code
 if (Test-Path "D:\scripts") {
   add-pathvariable "D:\scripts"
