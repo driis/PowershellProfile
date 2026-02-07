@@ -12,11 +12,7 @@ Set-Alias pbcopy set-clipboard
 Set-Alias n code
 Add-PathVariable "C:\Program Files\Git\bin"
 Add-PathVariable "C:\Program Files\Amazon\AWSCLIV2"
-
-
-if (Test-Path "D:\scripts") {
-  add-pathvariable "D:\scripts"
-}
+Add-PathVariable "~\.local\bin"
 
 # Make TLS1.2 default for this instance of PSH
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
@@ -32,9 +28,3 @@ $Host.UI.RawUI.WindowTitle = $WindowTitle
 
 # Setup Git to use OpenSSH bundled with Windows so we can use ssh-agent as a service
 (get-command ssh)[0].Source | Set-Item Env:GIT_SSH
-
-# Chocolatey profile
-$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
-if (Test-Path($ChocolateyProfile)) {
-  Import-Module "$ChocolateyProfile"
-}
