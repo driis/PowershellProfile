@@ -10,6 +10,10 @@ Set-Alias pbpaste get-clipboard
 Set-Alias pbcopy set-clipboard
 #Paths
 Set-Alias n code
+Add-PathVariable "C:\Program Files\Git\bin"
+Add-PathVariable "C:\Program Files\Amazon\AWSCLIV2"
+
+
 if (Test-Path "D:\scripts") {
   add-pathvariable "D:\scripts"
 }
@@ -25,7 +29,12 @@ $Host.UI.RawUI.WindowTitle = $WindowTitle
 
 # Load posh-git profile
 . (Join-Path $ProfileDir config\posh-git-profile.driis.ps1)
-. (Join-Path $ProfileDir paket.ps1)
 
 # Setup Git to use OpenSSH bundled with Windows so we can use ssh-agent as a service
 (get-command ssh)[0].Source | Set-Item Env:GIT_SSH
+
+# Chocolatey profile
+$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
+if (Test-Path($ChocolateyProfile)) {
+  Import-Module "$ChocolateyProfile"
+}
